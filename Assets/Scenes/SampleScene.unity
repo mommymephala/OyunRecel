@@ -268,10 +268,12 @@ MonoBehaviour:
   orientation: {fileID: 1071882844}
   playerCam: {fileID: 963194227}
   moveSpeed: 1
+  acceleration: 8
+  walkSpeed: 4
   groundDrag: 6
   toggleHeadbob: 1
   headbobFrequency: 1
-  walkHeadbobAmount: 0.1
+  walkHeadbobAmount: 0.25
   headbobSpeedMultiplier: 0.1
 --- !u!136 &358298985
 CapsuleCollider:

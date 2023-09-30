@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     private const float MovementMultiplier = 10f;
     [SerializeField] private float moveSpeed = 1f;
+    [SerializeField] private float acceleration = 10f;
+    [SerializeField] private float walkSpeed = 4f;
     [SerializeField] private float groundDrag = 6f;
     private float _horizontalMovement;
     private float _verticalMovement;
@@ -40,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
     {
         TakeInput();
         ControlDrag();
+        ControlSpeed();
         HandleHeadbob();
     }
 
@@ -59,6 +62,11 @@ public class PlayerMovement : MonoBehaviour
     private void MovePlayer()
     {
         _rb.AddForce(_moveDirection.normalized * (moveSpeed * MovementMultiplier), ForceMode.Acceleration);
+    }
+
+    private void ControlSpeed()
+    {
+        moveSpeed = Mathf.Lerp(moveSpeed, walkSpeed, acceleration * Time.deltaTime);
     }
     
     private void ControlDrag()
@@ -86,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            // Reset headbob when not moving or in the air
+            // Reset headbob when not moving
             playerCam.transform.localPosition = Vector3.Lerp(playerCam.transform.localPosition, _originalLocalPosition, Time.deltaTime * headbobSpeedMultiplier);
             _headbobTimer = 0f;
         }
