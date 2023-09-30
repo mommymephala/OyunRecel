@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
-    public KeyCode interactKey = KeyCode.E;
+    [SerializeField] private KeyCode interactKey = KeyCode.Mouse0;
     private Camera _camera;
     private bool _isCameraNull;
     private float _maxDistance;
