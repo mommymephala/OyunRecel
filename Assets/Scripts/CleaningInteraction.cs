@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CleanMe : MonoBehaviour, IInteractable
+public class CleaningInteraction : MonoBehaviour, IInteractable
 {
     public void Interact()
     {

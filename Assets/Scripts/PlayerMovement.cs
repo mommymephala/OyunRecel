@@ -4,34 +4,28 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Transform orientation;
     [SerializeField] private Camera playerCam;
-
-    [Header("Movement")]
-    private const float MovementMultiplier = 10f;
-    [SerializeField] private float moveSpeed = 1f;
-    [SerializeField] private float acceleration = 10f;
-    [SerializeField] private float walkSpeed = 4f;
-    [SerializeField] private float groundDrag = 6f;
-    private float _horizontalMovement;
-    private float _verticalMovement;
-    private Vector3 _moveDirection;
-
-    [Header("Headbob")]
+    [SerializeField] private float moveSpeed = 4f;
     [SerializeField] private bool toggleHeadbob = true;
     [SerializeField] private float headbobFrequency = 2f;
     [SerializeField] private float walkHeadbobAmount = 0.1f;
     [SerializeField] private float headbobSpeedMultiplier = 1f;
-    private float _headbobTimer;
-    private Vector3 _originalLocalPosition;
     
-    //Components
-    private Rigidbody _rb;
+    private const float Gravity = 9.81f;
+    private float _horizontalMovement;
+    private float _verticalMovement;
+    private Vector3 _moveDirection;
+    private Vector3 _originalLocalPosition;
+    private float _verticalVelocity;
+
+    private CharacterController _characterController;
     private bool _isCameraNotNull;
+    private float _headbobTimer;
 
     private void Awake()
     {
         _isCameraNotNull = playerCam != null;
-        _rb = GetComponent<Rigidbody>();
-        _rb.freezeRotation = true;
+        _characterController = GetComponent<CharacterController>();
+
         if (playerCam != null)
         {
             _originalLocalPosition = playerCam.transform.localPosition;
@@ -41,14 +35,9 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         TakeInput();
-        ControlDrag();
-        ControlSpeed();
-        HandleHeadbob();
-    }
-
-    private void FixedUpdate()
-    {
         MovePlayer();
+        HandleHeadbob();
+        ApplyGravity();
     }
 
     private void TakeInput()
@@ -61,17 +50,24 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        _rb.AddForce(_moveDirection.normalized * (moveSpeed * MovementMultiplier), ForceMode.Acceleration);
+        _characterController.Move(_moveDirection.normalized * (moveSpeed * Time.deltaTime));
     }
 
-    private void ControlSpeed()
+    private void ApplyGravity()
     {
-        moveSpeed = Mathf.Lerp(moveSpeed, walkSpeed, acceleration * Time.deltaTime);
-    }
-    
-    private void ControlDrag()
-    {
-        _rb.drag = groundDrag;
+        // Apply gravity to the vertical velocity.
+        if (!_characterController.isGrounded)
+        {
+            _verticalVelocity -= Gravity * Time.deltaTime;
+        }
+        else
+        {
+            // Reset vertical velocity when grounded.
+            _verticalVelocity = -Gravity * Time.deltaTime;
+        }
+
+        // Apply vertical velocity to move the character.
+        _characterController.Move(new Vector3(0, _verticalVelocity, 0) * Time.deltaTime);
     }
 
     private void HandleHeadbob()
