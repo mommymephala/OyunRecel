@@ -15,7 +15,7 @@ public class PlayerInteract : MonoBehaviour
 
     private void Start()
     {
-        _maxDistance = 500f;
+        _maxDistance = 250f;
     }
 
     private void Update()
