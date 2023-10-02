@@ -6,6 +6,8 @@ public class PlayerInit : MonoBehaviour
 {
     [SerializeField] private Image fadeImage;
     [SerializeField] private float fadeDuration = 1.0f;
+    [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private PlayerLook playerLook;
 
     private void Start()
     {
@@ -14,8 +16,21 @@ public class PlayerInit : MonoBehaviour
 
     private IEnumerator EyeOpeningSequence()
     {
+        if (playerMovement != null)
+            playerMovement.enabled = false;
+
+        if (playerLook != null)
+            playerLook.enabled = false;
+
         yield return CloseTheEyes();
         yield return Wait();
+
+        if (playerMovement != null)
+            playerMovement.enabled = true;
+
+        if (playerLook != null)
+            playerLook.enabled = true;
+
         ResetFadeCanvas();
     }
 
