@@ -1,4 +1,5 @@
 using System.Collections;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,10 +14,12 @@ namespace Lv1
         private bool _isInteracting;
         private GameObject _playerCharacter;
         private EventManager _eventManager;
+        private LevelSelection _levelSelection;
         private void Start()
         {
             _playerCharacter = GameObject.FindGameObjectWithTag("Player");
             _eventManager = FindObjectOfType<EventManager>();
+            _levelSelection = FindObjectOfType<LevelSelection>();
         }
 
         public void Interact()
@@ -41,6 +44,8 @@ namespace Lv1
             ResetFadeCanvas();
 
             yield return FadeToBlack();
+            
+            _levelSelection.LoadLevel();
 
             _isInteracting = false;
         }

@@ -7,6 +7,7 @@ namespace Lv1
     {
         public GameObject popupPrefab;
         public TextMeshProUGUI popupText;
+        public AudioSource soundFX;
 
         private bool _isInteracting;
         private bool _popupActive;
@@ -19,7 +20,6 @@ namespace Lv1
         [SerializeField]
         [TextArea(10, 15)]
         private string[] journalPages;
-       
 
         private void Start()
         {
@@ -42,7 +42,7 @@ namespace Lv1
                 {
                     popupPrefab.SetActive(true);
                     _popupActive = true;
-                    
+
                     _currentPageIndex = 0;
                     if (popupText != null)
                         popupText.text = journalPages[_currentPageIndex];
@@ -53,6 +53,12 @@ namespace Lv1
                 if (!_firstInteraction) return;
                 _eventManager.triggerCount++;
                 _firstInteraction = false;
+
+                // Play the sound effect.
+                if (soundFX != null)
+                {
+                    soundFX.Play();
+                }
             }
             else
             {
