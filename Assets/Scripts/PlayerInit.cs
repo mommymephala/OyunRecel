@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class PlayerInit : MonoBehaviour
 {
     [SerializeField] private Image fadeImage;
-    [SerializeField] private float fadeDuration = 1.0f;
+    [SerializeField] private float fadeDuration;
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private PlayerLook playerLook;
 
@@ -22,8 +22,7 @@ public class PlayerInit : MonoBehaviour
         if (playerLook != null)
             playerLook.enabled = false;
 
-        yield return CloseTheEyes();
-        yield return Wait();
+        yield return OpenTheEyes();
 
         if (playerMovement != null)
             playerMovement.enabled = true;
@@ -34,25 +33,21 @@ public class PlayerInit : MonoBehaviour
         ResetFadeCanvas();
     }
 
-    private IEnumerator CloseTheEyes()
+    private IEnumerator OpenTheEyes()
     {
         var elapsedTime = 0f;
+        var startAlpha = 1f;
 
         while (elapsedTime < fadeDuration)
         {
-            var alpha = Mathf.Lerp(0, 1, elapsedTime / fadeDuration);
+            var alpha = Mathf.Lerp(startAlpha, 0, elapsedTime / fadeDuration);
             fadeImage.color = new Color(0, 0, 0, alpha);
 
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        fadeImage.color = new Color(0, 0, 0, 1);
-    }
-
-    private IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(1f);
+        fadeImage.color = new Color(0, 0, 0, 0); // Set alpha to fully transparent.
     }
 
     private void ResetFadeCanvas()

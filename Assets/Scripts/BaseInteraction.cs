@@ -4,10 +4,8 @@ using UnityEngine;
 public class BaseInteraction : MonoBehaviour, IInteractable
 {
     public GameObject popupPrefab;
-
     [TextArea(3, 10)]
     public string interactionText;
-
     private bool _isInteracting;
     private PlayerMovement _playerMovement;
     private PlayerLook _playerLook;
