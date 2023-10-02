@@ -3541,7 +3541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c30f48e2701fd1f40a8c48d9da000e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 
+  sceneToLoad: cell_3
 --- !u!65 &305798816
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3762,7 +3762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c30f48e2701fd1f40a8c48d9da000e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 
+  sceneToLoad: cell_3
 --- !u!1 &488443096
 GameObject:
   m_ObjectHideFlags: 0
@@ -11893,7 +11893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c30f48e2701fd1f40a8c48d9da000e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 
+  sceneToLoad: cell_3
 --- !u!65 &1341428835
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12960,7 +12960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c30f48e2701fd1f40a8c48d9da000e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 
+  sceneToLoad: cell_3
 --- !u!4 &1627314276 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3dd30efcdf3c3d442ae5855045dd575d, type: 3}
@@ -12998,7 +12998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c30f48e2701fd1f40a8c48d9da000e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 
+  sceneToLoad: cell_3
 --- !u!65 &1634065219
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15291,7 +15291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c30f48e2701fd1f40a8c48d9da000e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 
+  sceneToLoad: cell_3
 --- !u!114 &4612263464479521195
 MonoBehaviour:
   m_ObjectHideFlags: 0

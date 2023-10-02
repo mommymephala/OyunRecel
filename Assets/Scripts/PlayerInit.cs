@@ -36,7 +36,7 @@ public class PlayerInit : MonoBehaviour
     private IEnumerator OpenTheEyes()
     {
         var elapsedTime = 0f;
-        var startAlpha = 1f;
+        const float startAlpha = 1f;
 
         while (elapsedTime < fadeDuration)
         {
