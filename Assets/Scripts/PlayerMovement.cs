@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float headbobFrequency = 2f;
     [SerializeField] private float walkHeadbobAmount = 0.1f;
     [SerializeField] private float headbobSpeedMultiplier = 1f;
-    
+
     private const float Gravity = 9.81f;
     private float _horizontalMovement;
     private float _verticalMovement;

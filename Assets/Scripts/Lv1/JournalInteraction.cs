@@ -19,7 +19,7 @@ namespace Lv1
         [SerializeField]
         [TextArea(10, 15)]
         private string[] journalPages;
-        private CanvasGroup _canvasGroup;
+       
 
         private void Start()
         {
