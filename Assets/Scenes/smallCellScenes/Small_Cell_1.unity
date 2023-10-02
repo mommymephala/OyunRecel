@@ -777,26 +777,24 @@ MonoBehaviour:
   popupText: {fileID: 425586348}
   soundFX: {fileID: 330055741}
   journalPages:
-  - "Can someone feel too much?\r\nThat it burns\r\nThat you can\u2019t see\r\nOr
-    make any sense\r\nAnd only stare"
-  - 'I am suffocating
+  - 'My dreams weakened
 
-    Have no thoughts but
+    Confined to your longing
 
-    Crawling to the home I long
+    Just to feel the glimpse
+    of warmth
 
-    So,
-    so far away
+    That I gave away'
+  - 'It was walls and walls again
 
-    Where my warmth is'
-  - 'Can someone feel too much?
+    I had nothing to understand
 
-    Is it the ecstasy I feel?
+    No face
+    to look at
 
-    Oh I am laughing
-    in silence
-
-    Without you'
+    Hanging from the ledge of my anger'
+  - "\rI wanted to go home\r\nWanted to be held\r\nTo laugh in silence\r\nBut I could
+    only stare\r\nTo those empty faces\r\nI wish you were there"
 --- !u!4 &518921721 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1cf101ea5a2bb8549bce3e568874b6a9, type: 3}
