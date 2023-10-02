@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class JournalInteraction : MonoBehaviour, IInteractable
 {
-    public GameObject journalPanel;
     private bool _isInteracting;
     private PlayerMovement _playerMovement;
     private PlayerLook _playerLook;
@@ -23,7 +22,6 @@ public class JournalInteraction : MonoBehaviour, IInteractable
             if (_playerLook != null)
                 _playerLook.enabled = false;
 
-            journalPanel.SetActive(true);
             _isInteracting = true;
         }
         else
@@ -34,7 +32,6 @@ public class JournalInteraction : MonoBehaviour, IInteractable
             if (_playerLook != null)
                 _playerLook.enabled = true;
 
-            journalPanel.SetActive(false);
             _isInteracting = false;
         }
     }
