@@ -789,8 +789,8 @@ MonoBehaviour:
 
     I had nothing to understand
 
-    No face
-    to look at
+    No face to
+    look at
 
     Hanging from the ledge of my anger'
   - "\rI wanted to go home\r\nWanted to be held\r\nTo laugh in silence\r\nBut I could
@@ -3259,7 +3259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 1952193642}
-  fadeDuration: 1
+  fadeDuration: 2.5
   playerMovement: {fileID: 5167858867084900854}
   playerLook: {fileID: 8794474900489185244}
 --- !u!4 &9156344753148109860

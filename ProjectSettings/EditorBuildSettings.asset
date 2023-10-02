@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Intro/WarningVideo.unity
+    guid: eec5420055230e143b782cf479cbb4ea
+  - enabled: 1
+    path: Assets/Scenes/Intro/MainMenu.unity
+    guid: 93cd8cd2463b6e34394c2d4821136017
+  - enabled: 1
+    path: Assets/Scenes/Intro/IntroVideo.unity
+    guid: 63df0e21dad86a0459a01b471057e12d
+  - enabled: 1
     path: Assets/Scenes/cellScenes/cell_1.unity
     guid: 16e92aceab9c76a46ae9745a073afcc8
   - enabled: 1
@@ -32,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/smallCellScenes/Small_Cell_2.unity
     guid: acec358884f7e3a47a6517f87fca6687
+  - enabled: 1
+    path: Assets/Scenes/Intro/EndingVideo.unity
+    guid: 5c16df625466702498030e5a5fa192cd
   m_configObjects: {}

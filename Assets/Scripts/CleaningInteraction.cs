@@ -5,7 +5,8 @@ public class CleaningInteraction : MonoBehaviour, IInteractable
 {
     private EventManager _eventManager;
     public string sceneToLoad;
-    
+    public AudioSource soundFX;
+
     private void Start()
     {
         _eventManager = FindObjectOfType<EventManager>();
@@ -13,6 +14,11 @@ public class CleaningInteraction : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        if (soundFX != null)
+        {
+            soundFX.Play();
+        }
+        
         gameObject.SetActive(false);
 
         if (_eventManager == null) return;
@@ -24,7 +30,7 @@ public class CleaningInteraction : MonoBehaviour, IInteractable
             Debug.LogError("Scene name to load is not specified.");
             return;
         }
-        
+
         SceneManager.LoadScene(sceneToLoad);
     }
 }
