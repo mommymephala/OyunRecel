@@ -20,7 +20,6 @@ public class PlayerInteract : MonoBehaviour
 
     private void Update()
     {
-        // Raycast from your player's camera to detect the interactable object.
         if (!Input.GetKeyDown(interactKey)) return;
         if (_isCameraNull) return;
         if (!Physics.Raycast(_camera.transform.position, _camera.transform.forward, out RaycastHit hit,
